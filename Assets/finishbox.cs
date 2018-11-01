@@ -7,6 +7,6 @@ public class finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("Player").SendMessage("finish");
+        GameObject.Find("Player").SendMessage("Finish");
     }
 }
