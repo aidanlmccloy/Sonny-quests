@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class finished : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject.Find("Player").SendMessage("finish");
+    }
 }

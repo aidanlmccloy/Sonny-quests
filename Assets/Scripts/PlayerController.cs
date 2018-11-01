@@ -39,14 +39,22 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
+        if ((count >= 3) && (other.gameObject.CompareTag("finish")))
+        {
+            Finish = true;
+        }
+        if (Finish == true)
+        {
+            winText.text = "Congratulations! You have collected all three coins and something else blah blah";
+        }
     }
-    public void finish()
+    /*public void finish()
     {
         if ((count >= 3) && (Finish = true))
         {
             winText.text = "You Win!";
         }
-    }
+    }*/
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString();
