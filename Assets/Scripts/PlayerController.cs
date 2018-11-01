@@ -45,16 +45,9 @@ public class PlayerController : MonoBehaviour
         }
         if (Finish == true)
         {
-            winText.text = "Congratulations! You have collected all three coins and something else blah blah";
+            winText.text = "Congratulations! You have discovered the keyboard, collected all coins, and jumped to the flag!";
         }
     }
-    /*public void finish()
-    {
-        if ((count >= 3) && (Finish = true))
-        {
-            winText.text = "You Win!";
-        }
-    }*/
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString();
