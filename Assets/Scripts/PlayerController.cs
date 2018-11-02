@@ -30,6 +30,13 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
+    void Update()
+    {
+        if (transform.position.y < -6)
+        {
+            transform.position = new Vector3(1.25f, .45f, -3.75f);
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
