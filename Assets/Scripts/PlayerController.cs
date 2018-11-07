@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up"))
+        if (other.gameObject.CompareTag("Pick Up") || other.gameObject.CompareTag("Pick Up 2") || other.gameObject.CompareTag("Pick Up 3"))
         {
             other.gameObject.SetActive(false);
             count = count + 1;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Finish == true)
         {
-            winText.text = "Congratulations! You have discovered the keyboard, collected all coins, and jumped to the flag!";
+          //  winText.text = "Congratulations! You have discovered the keyboard, collected all coins, and jumped to the flag!";
         }
     }
     void SetCountText ()

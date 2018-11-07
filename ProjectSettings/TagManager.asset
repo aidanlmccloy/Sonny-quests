@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pick Up
   - finish
+  - Pick Up 2
+  - Pick Up 3
+  - SimpleGameManager
   layers:
   - Default
   - TransparentFX
