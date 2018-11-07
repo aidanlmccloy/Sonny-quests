@@ -55,14 +55,14 @@ public class SimpleGameManager : MonoBehaviour
 
           switch (questName)
             {
-                case "Pick Up":
+                case "PickUp":
                     Quest1 = true;
                     Debug.Log("Quest1 True");
                     break;
-                case "Pick Up 2":
+                case "PickUp2":
                     Quest2 = true;
                     break;
-                case "Pick Up 3":
+                case "PickUp3":
                     Quest3 = true;
                     break;
                 default:
@@ -129,13 +129,13 @@ public class SimpleGameManager : MonoBehaviour
     // Hmm. Some more initialization code! Looks like
     protected SimpleGameManager()
     {
-        questStates.Add("Pick Up", false);
+        questStates.Add("PickUp", false);
         questDescriptions.Add("Pick Up", "Picked up 1 coin!");
-        questStates.Add("Pick Up 2", false);
+        questStates.Add("PickUp2", false);
         questDescriptions.Add("Pick Up 2", "Picked up 2 coins!");
-        questStates.Add("Pick Up 3", false);
-        questDescriptions.Add("Pick Up 3", "Picked up 3 coins!");
-        Debug.Log("Added Quests for Pick Up, Pick Up 2, and Pick Up 3");
+        questStates.Add("PickUp3", false);
+        questDescriptions.Add("PickUp3", "Picked up 3 coins!");
+        Debug.Log("Added Quests for PickUp, PickUp2, and PickUp3");
     }
 
     public void AdvancedFinishQuest(string questName)
