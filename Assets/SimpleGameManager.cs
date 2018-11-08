@@ -7,9 +7,9 @@ public delegate void OnStateChangeHandler();
 public class SimpleGameManager : MonoBehaviour
 {
     // Class Variables and Properties
-    public bool Quest1 = false;
-    public bool Quest2 = false;
-    public bool Quest3 = false;
+    private bool Quest1 = false;
+    private bool Quest2 = false;
+    private bool Quest3 = false;
     private static SimpleGameManager instance = null;
     public static SimpleGameManager Instance
     {
@@ -68,11 +68,11 @@ public class SimpleGameManager : MonoBehaviour
                 default:
                     break;
             }
-
-            // Open the gate if all quests are complete!
-            if (AreQuestsFinished()) OpenTheGate();
+        Debug.Log("Quest 1: " + Quest1);
+        Debug.Log("Quest 2: " + Quest2);
+        Debug.Log("Quest 3: " + Quest3);
     }
-    bool AreQuestsFinished()
+    public bool AreQuestsFinished()
     {
         Debug.Log("Are Quests Finished? " + (Quest1 && Quest2 && Quest3));
         Debug.Log("Quest1: " + Quest1);
@@ -130,7 +130,7 @@ public class SimpleGameManager : MonoBehaviour
     protected SimpleGameManager()
     {
         questStates.Add("PickUp", false);
-        questDescriptions.Add("Pick Up", "Picked up 1 coin!");
+        questDescriptions.Add("PickUp", "Picked up 1 coin!");
         questStates.Add("PickUp2", false);
         questDescriptions.Add("Pick Up 2", "Picked up 2 coins!");
         questStates.Add("PickUp3", false);

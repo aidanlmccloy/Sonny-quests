@@ -9,6 +9,9 @@ TagManager:
   - Pick Up 2
   - Pick Up 3
   - SimpleGameManager
+  - PickUp3
+  - PickUp2
+  - PickUp
   layers:
   - Default
   - TransparentFX

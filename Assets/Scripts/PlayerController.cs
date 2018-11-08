@@ -6,13 +6,19 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    SimpleGameManager GM;
+    void Awake()
+    {
+        GM = SimpleGameManager.Instance;
+    }
+
     public float speed;
     public Text countText;
     public Text winText;
 
     private Rigidbody rb;
     private int count;
-    private bool Finish = false; 
+    private bool Finish = false;
 
     void Start()
     {
@@ -40,21 +46,23 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up") || other.gameObject.CompareTag("Pick Up 2") || other.gameObject.CompareTag("Pick Up 3"))
+        Debug.Log(other.gameObject.tag);
+
+        if (other.gameObject.CompareTag("PickUp") || other.gameObject.CompareTag("PickUp2") || other.gameObject.CompareTag("PickUp3"))
         {
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            GM.FinishQuest(other.gameObject.tag);
         }
-        if ((count >= 3) && (other.gameObject.CompareTag("finish")))
+
+        if ((GM.AreQuestsFinished()) && (other.gameObject.CompareTag("finish")))
         {
-            Finish = true;
-        }
-        if (Finish == true)
-        {
-          //  winText.text = "Congratulations! You have discovered the keyboard, collected all coins, and jumped to the flag!";
+            winText.text = "Congratulations! You have discovered the keyboard, collected all coins, and jumped to the flag!";
         }
     }
+    
+
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString();
